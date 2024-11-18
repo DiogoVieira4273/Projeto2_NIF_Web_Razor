@@ -1,0 +1,54 @@
+﻿@page
+@model Projeto2_NIF_Web_Razor.Pages.NIF_Empresa.IndexModel
+@{
+}
+
+<br>
+<h2>List of Companies</h2>
+<a class="btn btn-primary btn-sm" href="/NIF_Empresa/Create">New Company</a>
+<table class="table" id="NIF">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NIF</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>PC4</th>
+            <th>PC3</th>
+            <th>Region</th>
+            <th>County</th>
+            <th>Parish</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Fax</th>
+            <th>Imagem_URL</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listCompanies)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.NIF</td>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.PC4</td>
+                <td>@item.PC3</td>
+                <td>@item.Region</td>
+                <td>@item.County</td>
+                <td>@item.Parish</td>
+                <td>@item.Email</td>
+                <td>@item.Phone</td>
+                <td>@item.Website</td>
+                <td>@item.Fax</td>
+                <td>@item.Imagem_URL</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/NIF_Empresa/Edit?id=@item.ID">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/NIF_Empresa/Delete?id=@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
