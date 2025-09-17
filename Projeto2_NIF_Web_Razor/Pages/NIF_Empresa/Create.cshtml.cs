@@ -34,7 +34,6 @@ namespace Projeto2_NIF_Web_Razor.Pages.NIF_Empresa
                 return;
             }
 
-            //save the new company into the database
             try
             {
                 String connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=NIFDB";
