@@ -1,0 +1,26 @@
+﻿@page
+@using Microsoft.Data.SqlClient;
+
+@{
+    try
+    {
+        int id = int.Parse(Request.Query["id"]);
+
+        String connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=NIFDB";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            String sql = "Delete from NIF_Empresa where ID=@ID";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+    }
+
+    Response.Redirect("/NIF_Empresa/Index");
+}
