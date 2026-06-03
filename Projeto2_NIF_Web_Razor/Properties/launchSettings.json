@@ -1,3 +1,23 @@
 {
-  "$schema": "https://json.schemastore.org/launchsettings.json"
+  "profiles": {
+    "Projeto2_NIF_Web_Razor": {
+      "commandName": "Project"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:57756/",
+      "sslPort": 44344
+    }
+  }
 }
